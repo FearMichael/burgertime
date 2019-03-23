@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="burger">
+        <img src="https://assets.epicurious.com/photos/57c5c6d9cf9e9ad43de2d96e/master/pass/the-ultimate-hamburger.jpg" alt="image of burger">
+    </div>
+    <div class="center-align">
+        <h5>Eat Da Burger</h5>
+    </div>
+    {{#if burgers.eaten}}
+    {{#each burgers}}
+    <div class="row">
+        <div class="col">
+            <div class="row">
+            <div class="col">
+                <h4>{{burgers.name}}</h4>
+            </div>
+            <div class="col">
+                <button>Eat {{burgers.name}}!</button>
+            </div>
+            </div>
+        </div>
+    {{/each}}
+    {{else}}
+    {{#each burgers}}
+        <div class="col">
+            <div class="row">
+            <div class="col">
+                <h4>{{burgers.name}}</h4>
+            </div>
+            <div class="col">
+                <button>Remove {{burgers.name}}!</button>
+            </div>
+            </div>
+        </div>
+    {{/each}}
+    </div>
+</div>

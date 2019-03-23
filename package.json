@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/FearMichael/burgertime/issues"
   },
-  "homepage": "https://github.com/FearMichael/burgertime#readme"
+  "homepage": "https://github.com/FearMichael/burgertime#readme",
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.1.0"
+  }
 }
