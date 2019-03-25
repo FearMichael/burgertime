@@ -3,9 +3,8 @@ module.exports = function(sequelize, DataTypes) {
         name: {
             type:  DataTypes.STRING,
             validate: {
-                is: /^[a-z]+$/i,
+                is: /^[a-zA-Z\s]*$/,
                 len: [2,40],
-                notNull: true,
                 notEmpty: true
             },
         },
@@ -14,8 +13,9 @@ module.exports = function(sequelize, DataTypes) {
             defaultValue: false,
         },
         ingredients: {
+            type: DataTypes.TEXT,
             defaultValue: null,
-            isAlphanumeric: true,
-        }
-    })
+            is: /^[a-zA-Z\s]*$/,
+        },
+    }, {timestamps: true, paranoid: true})
 }

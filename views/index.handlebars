@@ -1,36 +1,54 @@
-<div class="container">
+<div class="container center-align">
     <div class="burger">
-        <img src="https://assets.epicurious.com/photos/57c5c6d9cf9e9ad43de2d96e/master/pass/the-ultimate-hamburger.jpg" alt="image of burger">
+        <img class="responsive-img burgerPic" src="/assets/img/durrburgerinvis.png" alt="image of burger">
     </div>
     <div class="center-align">
-        <h5>Eat Da Burger</h5>
+        <h2>Eat Da Burger</h2>
     </div>
-    {{#if burgers.eaten}}
-    {{#each burgers}}
+        <div class="line"> </div>
+     <div class="center-align">
+        <h5 id="burgerTitle">Add a Burrggg</h5>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="row valign-wrapper">
+                <div class="input-field col l4 s6">
+                    <input placeholder="Burger Name" class="validate" id="burgerName">
+                </div>
+                <div class="input-field col l4 s6">
+                    <input placeholder="Ingredients (optional)" class="validate" id="burgerIngredients">
+                </div>
+                <div class="col l4 s6 valign-wrapper">
+                <button class="btn btn-large burgerButton">Send It! <i class="material-icons">mood</i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="line"> </div>
+    {{#if burgers}}
     <div class="row">
         <div class="col">
             <div class="row">
-            <div class="col">
-                <h4>{{burgers.name}}</h4>
-            </div>
-            <div class="col">
-                <button>Eat {{burgers.name}}!</button>
-            </div>
+    {{#each burgers}}
+    {{#unless this.eaten}}
+                <h4>{{this.name}}</h4>
+                <button class="btn btn-small eatButton" type="submit" data-id={{this.id}}>Eat {{this.name}}!</button>
+                {{/unless}}
+                {{/each}}
             </div>
         </div>
-    {{/each}}
-    {{else}}
-    {{#each burgers}}
         <div class="col">
             <div class="row">
             <div class="col">
-                <h4>{{burgers.name}}</h4>
-            </div>
-            <div class="col">
-                <button>Remove {{burgers.name}}!</button>
+                {{#each burgers}}
+                {{#if this.eaten}}
+                <h4>{{this.name}}</h4>
+                <button class="btn btn-small red removeButton" type="submit" data-id={{this.id}}>Remove {{this.name}}!</button>
+                {{/if}}
+                {{/each}}
             </div>
             </div>
         </div>
-    {{/each}}
+    {{/if}}
     </div>
 </div>

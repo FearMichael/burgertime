@@ -1,0 +1,23 @@
+.maincontent {
+    background-image: linear-gradient(orange, rgb(186, 130, 26), orange);
+}
+
+.line {
+    background-color: red;
+    height: 0.75rem;
+    width: 100%;
+}
+
+/* h5 {
+    color: purple;
+    font-size: 200px;
+}
+
+body {
+    background-color: aquamarine;
+} */
+
+/* #burgerTitle {
+    color: purple;
+    background-color: black;
+} */
