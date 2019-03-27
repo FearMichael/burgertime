@@ -14,6 +14,11 @@ const updateBurgers = (route) => {
     })
 }
 
+//Hacky way to get a more responsive form
+$(document).ready(() => {
+    document.body.clientWidth > 600 ? burgerForm.addClass("valign-wrapper") : burgerForm.removeClass("valign-wrapper")
+});
+
 $(window).resize(() => {
     if (document.body.clientWidth > 600) {
         burgerForm.addClass("valign-wrapper");
