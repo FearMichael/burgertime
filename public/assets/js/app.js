@@ -6,12 +6,21 @@ const burgerButton = $("#burgerButton");
 const burgerName = $("#burgerName");
 const burgerIngredients = $("#burgerIngredients")
 const burgerPic = $(".burgerPic");
+const burgerForm = $("#burgerForm");
 
 const updateBurgers = (route) => {
     $.get(route, function(data) {
         console.log(data);
     })
 }
+
+$(window).resize(() => {
+    if (document.body.clientWidth > 600) {
+        burgerForm.addClass("valign-wrapper");
+    } else {
+        burgerForm.removeClass("valign-wrapper")
+    }
+});
 
 //Add Burgers on button click from form
 burgerButton.click(function(event) {
